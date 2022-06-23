@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export const getActivityFeed = () => ({
   json: () => [
@@ -112,10 +112,16 @@ export const getActivityDetail = (id) => () => ({
   }),
 });
 
-export const useApi = (apiFunc) => {
+export const updateActivity =
+  (...params) =>
+  () => ({
+    json: () => ({}),
+  });
+
+export const useApi = (apiFunc, { initiallyLoading = true } = {}) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(initiallyLoading);
 
   const request = (...args) => {
     setLoading(true);
