@@ -35,4 +35,7 @@ module.exports = {
     // Map all routes to index for single-page application
     historyApiFallback: true,
   },
+  output: {
+    publicPath: '/',
+  },
 };
