@@ -31,4 +31,8 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  devServer: {
+    // Map all routes to index for single-page application
+    historyApiFallback: true,
+  },
 };
