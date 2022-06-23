@@ -14,13 +14,11 @@ const ActivityFeed = () => {
   }
 
   return (
-    <ul>
+    <div>
       {api.data.map((activity) => (
-        <li key={`activity-${activity.id}`}>
-          <ActivityFeedItem activity={activity} />
-        </li>
+        <ActivityFeedItem key={`activity-${activity.id}`} activity={activity} />
       ))}
-    </ul>
+    </div>
   );
 };
 

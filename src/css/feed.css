@@ -1,0 +1,12 @@
+.card.feed-item {
+  margin-top: 0.5rem;
+}
+
+.feed-item .card-title svg {
+  margin: 0rem 0.5rem;
+  width: 1.5rem;
+}
+
+.feed-item .info {
+  margin-left: 2.5rem;
+}
