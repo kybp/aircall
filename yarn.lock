@@ -2991,7 +2991,7 @@
   "resolved" "https://registry.npmjs.org/loglevel/-/loglevel-1.6.1.tgz"
   "version" "1.6.1"
 
-"loose-envify@^1.0.0", "loose-envify@^1.1.0", "loose-envify@^1.4.0":
+"loose-envify@^1.0.0", "loose-envify@^1.1.0":
   "integrity" "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q=="
   "resolved" "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
   "version" "1.4.0"
@@ -3707,15 +3707,6 @@
   "resolved" "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   "version" "1.0.1"
 
-"prop-types@^15.6.2":
-  "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
-  "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
-  "version" "15.8.1"
-  dependencies:
-    "loose-envify" "^1.4.0"
-    "object-assign" "^4.1.1"
-    "react-is" "^16.13.1"
-
 "proxy-addr@~2.0.4":
   "integrity" "sha512-5erio2h9jp5CHGwcybmxmVqHmnCBZeewlfJ0pex+UW7Qny7OOZXTtH56TGNyBizkgiOwhJtMKrVzDTeKcySZwA=="
   "resolved" "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.4.tgz"
@@ -3831,29 +3822,20 @@
     "iconv-lite" "0.4.23"
     "unpipe" "1.0.0"
 
-"react-dom@^16.3.1":
-  "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
-  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
-  "version" "16.14.0"
+"react-dom@^18.2.0":
+  "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
+  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
+  "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
-    "object-assign" "^4.1.1"
-    "prop-types" "^15.6.2"
-    "scheduler" "^0.19.1"
+    "scheduler" "^0.23.0"
 
-"react-is@^16.13.1":
-  "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
-  "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
-  "version" "16.13.1"
-
-"react@^16.14.0", "react@^16.3.1":
-  "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
-  "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
-  "version" "16.14.0"
+"react@^18.2.0":
+  "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
+  "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+  "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
-    "object-assign" "^4.1.1"
-    "prop-types" "^15.6.2"
 
 "readable-stream@^2.0.0":
   "integrity" "sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw=="
@@ -4189,13 +4171,12 @@
   "resolved" "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   "version" "2.1.2"
 
-"scheduler@^0.19.1":
-  "integrity" "sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA=="
-  "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.19.1.tgz"
-  "version" "0.19.1"
+"scheduler@^0.23.0":
+  "integrity" "sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw=="
+  "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz"
+  "version" "0.23.0"
   dependencies:
     "loose-envify" "^1.1.0"
-    "object-assign" "^4.1.1"
 
 "schema-utils@^0.4.4":
   "integrity" "sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ=="
