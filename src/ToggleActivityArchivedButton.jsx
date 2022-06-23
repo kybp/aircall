@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 
 import { updateActivity, useApi } from './api';
+import { NotificationsContext } from './notifications';
 
 const ToggleActivityArchivedButton = ({
   activity: { is_archived: isArchived },
@@ -9,7 +10,12 @@ const ToggleActivityArchivedButton = ({
   const api = useApi(updateActivity({ is_archived: !isArchived }), {
     initiallyLoading: false,
   });
-  const toggleArchived = useCallback(api.request, [isArchived]);
+  const notify = useContext(NotificationsContext);
+  const toggleArchived = useCallback(async () => {
+    await api.request();
+
+    notify.success('Activity successfully archived.');
+  }, [isArchived]);
 
   return (
     <Button variant="primary" onClick={toggleArchived} disabled={api.loading}>

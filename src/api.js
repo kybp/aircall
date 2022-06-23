@@ -1,4 +1,6 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useContext } from 'react';
+
+import { NotificationsContext } from './notifications';
 
 export const getActivityFeed = () => ({
   json: () => [
@@ -120,8 +122,8 @@ export const updateActivity =
 
 export const useApi = (apiFunc, { initiallyLoading = true } = {}) => {
   const [data, setData] = useState(null);
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(initiallyLoading);
+  const notify = useContext(NotificationsContext);
 
   const request = (...args) => {
     setLoading(true);
@@ -131,7 +133,7 @@ export const useApi = (apiFunc, { initiallyLoading = true } = {}) => {
         const response = await apiFunc(...args);
         setData(response.json());
       } catch (err) {
-        setError(err.message || 'An error has occurred.');
+        notify.error(err.message || 'An error has occurred.');
       } finally {
         setLoading(false);
       }
@@ -140,5 +142,5 @@ export const useApi = (apiFunc, { initiallyLoading = true } = {}) => {
     doIt();
   };
 
-  return { data, error, loading, request };
+  return { data, loading, request };
 };
