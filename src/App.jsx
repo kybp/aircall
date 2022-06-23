@@ -11,6 +11,7 @@ import {
 
 import ActivityDetail from './ActivityDetail.jsx';
 import ActivityFeed from './ActivityFeed.jsx';
+import ArchivedActivities from './ArchivedActivities.jsx';
 import Layout from './Layout.jsx';
 
 const App = () => {
@@ -19,9 +20,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/activities" />} />
-          <Route path="/activities">
+          <Route path="activities">
             <Route index element={<ActivityFeed />} />
-            <Route path=":activityId" element={<ActivityDetail />} />
+            <Route path="archived" element={<ArchivedActivities />} />
+            <Route path="show">
+              <Route path=":activityId" element={<ActivityDetail />} />
+            </Route>
           </Route>
         </Route>
       </Routes>

@@ -71,6 +71,33 @@ export const getActivityFeed = () => ({
   ],
 });
 
+export const getArchivedActivities = () => ({
+  json: () => [
+    {
+      id: 7834,
+      created_at: '2018-04-19T09:38:41.000Z',
+      direction: 'outbound',
+      from: 'Pierre-Baptiste Béchu',
+      to: '06 46 62 12 33',
+      via: 'NYC Office',
+      duration: '120',
+      is_archived: true,
+      call_type: 'missed',
+    },
+    {
+      id: 7829,
+      created_at: '2018-04-18T15:43:32.000Z',
+      direction: 'inbound',
+      from: '+33 6 34 45 74 34',
+      to: 'Olivier Pailhes',
+      via: 'Spain Hotline',
+      duration: '300',
+      is_archived: true,
+      call_type: 'answered',
+    },
+  ],
+});
+
 export const getActivityDetail = (id) => () => ({
   json: () => ({
     id: 7829,

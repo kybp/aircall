@@ -6,7 +6,7 @@ import ActivityIcon from './ActivityIcon.jsx';
 
 const ActivityFeedItem = ({ activity }) => {
   const navigate = useNavigate();
-  const handleClick = () => navigate(`/activities/${activity.id}`);
+  const handleClick = () => navigate(`/activities/show/${activity.id}`);
 
   return (
     <Card className="feed-item" onClick={handleClick}>
