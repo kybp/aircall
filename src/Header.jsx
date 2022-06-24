@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
 
 import Logo from './Logo.jsx';
-
-const linkTitles = {
-  '/activities': 'All',
-  '/activities/archived': 'Archived',
-};
 
 const Header = () => {
   const [selected, setSelected] = useState('/activities');
@@ -24,16 +19,14 @@ const Header = () => {
               <Logo />
             </Link>
           </Navbar.Brand>
-          <NavDropdown title={linkTitles[selected]} onSelect={setSelected}>
+          <Nav className="mr-auto" activeKey="All">
             <LinkContainer to="/activities">
-              <NavDropdown.Item>{linkTitles['/activities']}</NavDropdown.Item>
+              <Nav.Link>All</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/activities/archived">
-              <NavDropdown.Item>
-                {linkTitles['/activities/archived']}
-              </NavDropdown.Item>
+              <Nav.Link>Archived</Nav.Link>
             </LinkContainer>
-          </NavDropdown>
+          </Nav>
         </Container>
       </Navbar>
     </header>

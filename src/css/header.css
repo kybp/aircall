@@ -6,3 +6,11 @@
 .navbar > .container {
   justify-content: center;
 }
+
+.active.nav-link {
+  background-color: #bbb;
+}
+
+.nav-link {
+  background-color: #eee;
+}
