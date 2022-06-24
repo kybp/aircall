@@ -16,4 +16,6 @@ RUN yarn run build
 FROM nginx
 
 COPY --from=build /app/dist/ /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/
+COPY nginx.conf.template /etc/nginx/
+
+CMD /bin/sh -c "envsubst '\$PORT' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf" && nginx -g 'daemon off;'
