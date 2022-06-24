@@ -7,7 +7,7 @@ import { getActivityFeed, useApi } from './api';
 const ActivityFeed = () => {
   const api = useApi(getActivityFeed);
 
-  useEffect(api.request, []);
+  useEffect(api.requestEffect, []);
 
   if (api.loading) return <Loading />;
 

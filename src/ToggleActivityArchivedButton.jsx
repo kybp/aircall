@@ -19,10 +19,6 @@ const ToggleActivityArchivedButton = ({
 
   const toggleArchived = useCallback(async () => {
     await api.request();
-    await new Promise((resolve) => {
-      // If we redirect immediately, we get a 304 from the server.
-      setTimeout(() => resolve(), 200);
-    });
     navigate(isArchived ? '/activities/archived' : '/activities');
     notify.success(`Activity successfully ${verb.toLowerCase()}d.`);
   }, [isArchived]);

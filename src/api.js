@@ -27,22 +27,22 @@ export const useApi = (apiFunc, { initiallyLoading = true } = {}) => {
   const [loading, setLoading] = useState(initiallyLoading);
   const notify = useContext(NotificationsContext);
 
-  const request = (...args) => {
+  const request = async (...args) => {
     setLoading(true);
 
-    const doIt = async () => {
-      try {
-        const response = await apiFunc(...args);
-        setData(await response.json());
-      } catch (err) {
-        notify.error(err.message || 'An error has occurred.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    doIt();
+    try {
+      const response = await apiFunc(...args);
+      setData(await response.json());
+    } catch (err) {
+      notify.error(err.message || 'An error has occurred.');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return { data, loading, request };
+  const requestEffect = (...args) => {
+    request(...args);
+  };
+
+  return { data, loading, request, requestEffect };
 };

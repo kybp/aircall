@@ -12,7 +12,7 @@ const ActivityDetail = () => {
   const { activityId } = useParams();
   const api = useApi(getActivityDetail(activityId));
 
-  useEffect(api.request, [activityId]);
+  useEffect(api.requestEffect, [activityId]);
 
   if (api.loading) return <Loading />;
 
