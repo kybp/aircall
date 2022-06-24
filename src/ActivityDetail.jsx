@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Table from 'react-bootstrap/Table';
+import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom';
 
 import ActivityDetailTable from './ActivityDetailTable.jsx';
@@ -14,18 +14,18 @@ const ActivityDetail = () => {
 
   useEffect(api.request, [activityId]);
 
-  if (api.loading) {
-    return <Loading />;
-  }
+  if (api.loading) return <Loading />;
 
   const activity = api.data;
 
   return (
     activity && (
-      <div className="activity-detail">
-        <ActivityDetailTable activity={activity} />
-        <ToggleActivityArchivedButton activity={activity} />
-      </div>
+      <Card className="activity-detail">
+        <Card.Body>
+          <ActivityDetailTable activity={activity} />
+          <ToggleActivityArchivedButton activity={activity} />
+        </Card.Body>
+      </Card>
     )
   );
 };
