@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 
 import ActivityFeedItem from './ActivityFeedItem.jsx';
 import Loading from './Loading.jsx';
-import { getArchivedActivities, useApi } from './api';
+import { getActivityFeed, useApi } from './api';
 
 const ArchivedActivities = () => {
-  const api = useApi(getArchivedActivities);
+  const api = useApi(getActivityFeed);
 
   useEffect(api.request, []);
 
@@ -13,9 +13,11 @@ const ArchivedActivities = () => {
     return <Loading />;
   }
 
+  const activities = (api.data || []).filter((a) => a.is_archived);
+
   return (
     <div>
-      {api.data.map((activity) => (
+      {activities.map((activity) => (
         <ActivityFeedItem key={`activity-${activity.id}`} activity={activity} />
       ))}
     </div>

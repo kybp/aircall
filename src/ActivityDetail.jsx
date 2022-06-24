@@ -21,10 +21,12 @@ const ActivityDetail = () => {
   const activity = api.data;
 
   return (
-    <div className="activity-detail">
-      <ActivityDetailTable activity={activity} />
-      <ToggleActivityArchivedButton activity={activity} />
-    </div>
+    activity && (
+      <div className="activity-detail">
+        <ActivityDetailTable activity={activity} />
+        <ToggleActivityArchivedButton activity={activity} />
+      </div>
+    )
   );
 };
 

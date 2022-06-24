@@ -13,9 +13,11 @@ const ActivityFeed = () => {
     return <Loading />;
   }
 
+  const activities = (api.data || []).filter((a) => !a.is_archived);
+
   return (
     <div>
-      {api.data.map((activity) => (
+      {activities.map((activity) => (
         <ActivityFeedItem key={`activity-${activity.id}`} activity={activity} />
       ))}
     </div>
