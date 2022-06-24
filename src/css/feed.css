@@ -10,3 +10,27 @@
 .feed-item .info {
   margin-left: 2.5rem;
 }
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator:not(:empty)::before {
+  margin-top: 0.1rem;
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-top: 0.1rem;
+  margin-left: 0.25em;
+}
